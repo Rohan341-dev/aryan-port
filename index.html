@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aryan Mahato — Grade 9 student, tech enthusiast and beginner developer from Mirchaiya-6, Siraha, Nepal." />
+  <title>Aryan Mahato | Developer Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ====================== STICKY NAVIGATION ====================== -->
+  <header class="navbar" id="navbar">
+    <nav class="nav container">
+      <a href="#hero" class="nav__logo">
+        <span class="nav__logo-bracket">&lt;</span>aryan<span class="nav__logo-bracket">/&gt;</span>
+      </a>
+
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#hero" class="nav__link active">Home</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#skills" class="nav__link">Skills</a></li>
+        <li><a href="#projects" class="nav__link">Projects</a></li>
+        <li><a href="#creative" class="nav__link">Creative</a></li>
+        <li><a href="#journey" class="nav__link">Journey</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <!-- Dark / light mode toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <span class="theme-toggle__icon">🌙</span>
+        </button>
+
+        <!-- Hamburger (mobile) -->
+        <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ====================== HERO ====================== -->
+    <section class="hero" id="hero">
+      <!-- Lightweight background particles -->
+      <canvas class="hero__particles" id="particles"></canvas>
+
+      <div class="container hero__inner">
+        <div class="hero__content" data-reveal>
+          <p class="hero__hello">Hi there, I'm</p>
+          <h1 class="hero__title">Aryan Mahato <span class="hero__wave">👋</span></h1>
+          <p class="hero__subtitle">
+            Grade 9 Student <span class="dot">•</span> Tech Enthusiast <span class="dot">•</span> Beginner Developer
+          </p>
+          <p class="hero__intro">
+            I'm a young learner from Siraha, Nepal who loves turning small ideas
+            into real projects on the web. I code, I create, and I'm just getting started.
+          </p>
+
+          <div class="hero__buttons">
+            <a href="#projects" class="btn btn--primary">Explore My Work</a>
+            <a href="#contact" class="btn btn--ghost">Contact Me</a>
+          </div>
+        </div>
+
+        <!-- Developer-style visual: code window -->
+        <div class="hero__visual" data-reveal>
+          <div class="code-window">
+            <div class="code-window__bar">
+              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+              <span class="code-window__file">aryan.js</span>
+            </div>
+            <pre class="code-window__body"><code><span class="c-key">const</span> <span class="c-var">aryan</span> = {
+  <span class="c-prop">age</span>: <span class="c-num">15</span>,
+  <span class="c-prop">grade</span>: <span class="c-str">"9"</span>,
+  <span class="c-prop">from</span>: <span class="c-str">"Siraha, Nepal"</span>,
+  <span class="c-prop">skills</span>: [<span class="c-str">"HTML"</span>, <span class="c-str">"CSS"</span>, <span class="c-str">"JS"</span>],
+  <span class="c-prop">learning</span>: <span class="c-str">"every day"</span>
+};
+
+<span class="c-key">function</span> <span class="c-fn">dream</span>() {
+  <span class="c-key">return</span> <span class="c-str">"become a skilled developer"</span>;
+}
+<span id="typeLine"></span><span class="cursor">|</span></code></pre>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="hero__scroll" aria-label="Scroll down">⌄</a>
+    </section>
+
+    <!-- ====================== ABOUT ====================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section__title" data-reveal>About Me</h2>
+        <p class="section__subtitle" data-reveal>A little bit about who I am.</p>
+
+        <div class="about">
+          <div class="about__avatar" data-reveal>
+            <div class="about__avatar-circle">
+              <span>AM</span>
+            </div>
+          </div>
+
+          <div class="about__text" data-reveal>
+            <p class="about__quote">
+              I'm a Grade 9 student passionate about technology, coding, and creative work.
+              I enjoy learning new technologies and turning ideas into simple digital projects.
+            </p>
+
+            <ul class="about__facts">
+              <li><span class="about__fact-label">Age</span><span class="about__fact-value">15</span></li>
+              <li><span class="about__fact-label">Grade</span><span class="about__fact-value">9</span></li>
+              <li><span class="about__fact-label">Location</span><span class="about__fact-value">Mirchaiya-6, Siraha, Nepal</span></li>
+            </ul>
+
+            <a href="#contact" class="btn btn--primary">Let's Connect</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== SKILLS & INTERESTS ====================== -->
+    <section class="section section--alt" id="skills">
+      <div class="container">
+        <h2 class="section__title" data-reveal>Skills &amp; Interests</h2>
+        <p class="section__subtitle" data-reveal>Things I enjoy spending time on — no fake percentages here.</p>
+
+        <div class="grid grid--3">
+          <article class="card" data-reveal>
+            <div class="card__icon">💻</div>
+            <h3 class="card__title">Coding</h3>
+            <p class="card__text">Learning the basics of programming and solving small problems line by line.</p>
+            <span class="tag">Beginner</span>
+          </article>
+
+          <article class="card" data-reveal>
+            <div class="card__icon">🌐</div>
+            <h3 class="card__title">Web Development</h3>
+            <p class="card__text">Building pages with HTML, CSS and JavaScript — one section at a time.</p>
+            <span class="tag">Learning</span>
+          </article>
+
+          <article class="card" data-reveal>
+            <div class="card__icon">🎨</div>
+            <h3 class="card__title">Art</h3>
+            <p class="card__text">Sketching and digital art help me think visually about design.</p>
+            <span class="tag">Hobby</span>
+          </article>
+
+          <article class="card" data-reveal>
+            <div class="card__icon">📷</div>
+            <h3 class="card__title">Photography</h3>
+            <p class="card__text">Capturing everyday moments around Mirchaiya and Siraha.</p>
+            <span class="tag">Hobby</span>
+          </article>
+
+          <article class="card" data-reveal>
+            <div class="card__icon">🎧</div>
+            <h3 class="card__title">Music</h3>
+            <p class="card__text">Listening to music while I code keeps me focused and calm.</p>
+            <span class="tag">Hobby</span>
+          </article>
+
+          <article class="card" data-reveal>
+            <div class="card__icon">🚀</div>
+            <h3 class="card__title">Technology</h3>
+            <p class="card__text">Curious about how apps, gadgets and the internet actually work.</p>
+            <span class="tag">Passion</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== PROJECTS ====================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section__title" data-reveal>My Projects</h2>
+        <p class="section__subtitle" data-reveal>Small builds that taught me something big.</p>
+
+        <div class="grid grid--2">
+          <article class="project" data-reveal>
+            <div class="project__thumb project__thumb--1"> portfolio</div>
+            <div class="project__body">
+              <h3 class="project__title">Personal Portfolio</h3>
+              <p class="project__text">My own portfolio website — the one you're looking at right now. Built from scratch to introduce myself and my work.</p>
+              <div class="project__tags">
+                <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+              </div>
+              <a href="#" class="btn btn--small" target="_blank" rel="noopener">View Project →</a>
+            </div>
+          </article>
+
+          <article class="project" data-reveal>
+            <div class="project__thumb project__thumb--2">12 + 7</div>
+            <div class="project__body">
+              <h3 class="project__title">Simple Calculator</h3>
+              <p class="project__text">A clean calculator that handles basic math operations. My first real practice with JavaScript logic.</p>
+              <div class="project__tags">
+                <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+              </div>
+              <a href="#" class="btn btn--small" target="_blank" rel="noopener">View Project →</a>
+            </div>
+          </article>
+
+          <article class="project" data-reveal>
+            <div class="project__thumb project__thumb--3">☑ tasks</div>
+            <div class="project__body">
+              <h3 class="project__title">To-Do List</h3>
+              <p class="project__text">Add, complete and delete daily tasks. It taught me how to work with lists and local storage.</p>
+              <div class="project__tags">
+                <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+              </div>
+              <a href="#" class="btn btn--small" target="_blank" rel="noopener">View Project →</a>
+            </div>
+          </article>
+
+          <article class="project" data-reveal>
+            <div class="project__thumb project__thumb--4">▦ gallery</div>
+            <div class="project__body">
+              <h3 class="project__title">Digital Gallery</h3>
+              <p class="project__text">A simple image gallery with hover effects to showcase my art and photography in one place.</p>
+              <div class="project__tags">
+                <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+              </div>
+              <a href="#" class="btn btn--small" target="_blank" rel="noopener">View Project →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== CREATIVE CORNER ====================== -->
+    <section class="section section--alt" id="creative">
+      <div class="container">
+        <h2 class="section__title" data-reveal>Creative Corner</h2>
+        <p class="section__subtitle" data-reveal>Where code takes a break and creativity takes over.</p>
+
+        <div class="gallery">
+          <!-- Replace src with your own images later: assets/images/art-1.jpg -->
+          <figure class="gallery__item gallery__item--tall" data-reveal>
+            <img src="https://placehold.co/600x800/0f172a/22d3ee?text=Art" alt="Artwork placeholder" loading="lazy" />
+            <figcaption class="gallery__caption">Art</figcaption>
+          </figure>
+
+          <figure class="gallery__item" data-reveal>
+            <img src="https://placehold.co/600x450/0f172a/38bdf8?text=Photo" alt="Photography placeholder" loading="lazy" />
+            <figcaption class="gallery__caption">Photography</figcaption>
+          </figure>
+
+          <figure class="gallery__item" data-reveal>
+            <img src="https://placehold.co/600x450/0f172a/818cf8?text=Music" alt="Music placeholder" loading="lazy" />
+            <figcaption class="gallery__caption">Music</figcaption>
+          </figure>
+
+          <figure class="gallery__item gallery__item--wide" data-reveal>
+            <img src="https://placehold.co/900x500/0f172a/22d3ee?text=Creative+Corner" alt="Creative placeholder" loading="lazy" />
+            <figcaption class="gallery__caption">Sketchbook</figcaption>
+          </figure>
+
+          <figure class="gallery__item" data-reveal>
+            <img src="https://placehold.co/600x450/0f172a/38bdf8?text=Siraha" alt="Nature photography placeholder" loading="lazy" />
+            <figcaption class="gallery__caption">Siraha Nights</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== LEARNING JOURNEY ====================== -->
+    <section class="section" id="journey">
+      <div class="container">
+        <h2 class="section__title" data-reveal>Learning Journey</h2>
+        <p class="section__subtitle" data-reveal>From curious kid to (almost) developer.</p>
+
+        <ol class="timeline">
+          <li class="timeline__item" data-reveal>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__step">Step 01</span>
+              <h3>Started exploring technology</h3>
+              <p>Curiosity about computers, phones and how apps are built.</p>
+            </div>
+          </li>
+
+          <li class="timeline__item" data-reveal>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__step">Step 02</span>
+              <h3>Started learning coding</h3>
+              <p>Wrote my first lines of HTML and JavaScript.</p>
+            </div>
+          </li>
+
+          <li class="timeline__item" data-reveal>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__step">Step 03</span>
+              <h3>Built first projects</h3>
+              <p>Calculator, To-Do list and small experiments in the browser.</p>
+            </div>
+          </li>
+
+          <li class="timeline__item" data-reveal>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__step">Now</span>
+              <h3>Learning web development</h3>
+              <p>Improving HTML, CSS and JavaScript — and building this portfolio.</p>
+            </div>
+          </li>
+
+          <li class="timeline__item timeline__item--future" data-reveal>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__step">Future</span>
+              <h3>Become a skilled developer</h3>
+              <p>Keep learning, keep building, and turn ideas into real products.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ====================== CONTACT ====================== -->
+    <section class="section section--alt" id="contact">
+      <div class="container container--narrow">
+        <h2 class="section__title" data-reveal>Get In Touch</h2>
+        <p class="section__subtitle" data-reveal>
+          Have an idea, a question, or just want to say hi? My inbox is always open.
+        </p>
+
+        <div class="contact" data-reveal>
+          <h3 class="contact__cta">Let's Connect</h3>
+
+          <a href="mailto:aryan.mahato@example.com" class="contact__item">
+            <span class="contact__icon">✉️</span>
+            <span class="contact__value">aryan.mahato@example.com</span>
+          </a>
+
+          <p class="contact__item contact__item--static">
+            <span class="contact__icon">📍</span>
+            <span class="contact__value">Mirchaiya-6, Siraha, Nepal</span>
+          </p>
+
+          <div class="contact__socials">
+            <a href="#" class="social" aria-label="GitHub" target="_blank" rel="noopener">GitHub</a>
+            <a href="#" class="social" aria-label="Instagram" target="_blank" rel="noopener">Instagram</a>
+            <a href="#" class="social" aria-label="Facebook" target="_blank" rel="noopener">Facebook</a>
+            <a href="#" class="social" aria-label="X / Twitter" target="_blank" rel="noopener">Twitter</a>
+          </div>
+
+          <a href="mailto:aryan.mahato@example.com" class="btn btn--primary btn--lg">Say Hello →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================== FOOTER ====================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2026 Aryan Mahato. Built with HTML, CSS &amp; JavaScript.</p>
+      <p class="footer__note">Made with ☕ in Siraha, Nepal</p>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- Main script -->
+  <script src="script.js"></script>
+</body>
+</html>
