@@ -10,18 +10,28 @@ const themeToggle = document.getElementById("themeToggle");
 const themeIcon = themeToggle.querySelector(".theme-toggle__icon");
 const html = document.documentElement;
 
-// Load saved theme (or keep dark as default)
+// Load saved theme (yellow is the default)
 const savedTheme = localStorage.getItem("theme");
-if (savedTheme === "light") {
-  html.classList.add("light-theme");
+if (savedTheme === "dark") {
+  html.classList.add("dark-theme");
   themeIcon.textContent = "☀️";
 }
 
 themeToggle.addEventListener("click", () => {
-  html.classList.toggle("light-theme");
-  const isLight = html.classList.contains("light-theme");
-  themeIcon.textContent = isLight ? "☀️" : "🌙";
-  localStorage.setItem("theme", isLight ? "light" : "dark");
+  html.classList.toggle("dark-theme");
+  const isDark = html.classList.contains("dark-theme");
+  themeIcon.textContent = isDark ? "☀️" : "🌙";
+  localStorage.setItem("theme", isDark ? "dark" : "yellow");
+});
+
+/* ---------- 1b) PROFILE PHOTO FALLBACK ---------- */
+/* Shows "AM" initials if assets/images/aryan.jpg is missing */
+const aboutPhoto = document.getElementById("aboutPhoto");
+const aboutInitials = document.getElementById("aboutInitials");
+
+aboutPhoto.addEventListener("error", () => {
+  aboutPhoto.style.display = "none";
+  aboutInitials.style.display = "block";
 });
 
 /* ---------- 2) STICKY NAVBAR BACKGROUND ---------- */

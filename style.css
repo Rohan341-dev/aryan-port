@@ -8,6 +8,29 @@
 
 /* ---------- 1) CSS VARIABLES (theme colors) ---------- */
 :root {
+  /* Yellow background theme (default) */
+  --bg: #fde047;
+  --bg-alt: #fde68a;
+  --surface: rgba(255, 255, 255, 0.45);
+  --surface-solid: #fffbeb;
+  --border: rgba(24, 24, 27, 0.14);
+  --text: #18181b;
+  --text-muted: #3f3f46;
+  --accent: #0f172a;
+  --accent-2: #1d4ed8;
+  --accent-soft: rgba(15, 23, 42, 0.08);
+  --shadow: 0 10px 30px rgba(24, 24, 27, 0.18);
+  --btn-on-accent: #fde047;
+  --hero-glow-1: rgba(29, 78, 216, 0.12);
+  --hero-glow-2: rgba(15, 23, 42, 0.1);
+  --radius: 16px;
+  --nav-h: 68px;
+  --font: "Poppins", system-ui, sans-serif;
+  --mono: "Fira Code", monospace;
+}
+
+/* Dark mode (toggled by adding .dark-theme on <html>) */
+html.dark-theme {
   --bg: #0b1120;
   --bg-alt: #0f172a;
   --surface: rgba(255, 255, 255, 0.04);
@@ -19,25 +42,9 @@
   --accent-2: #38bdf8;
   --accent-soft: rgba(34, 211, 238, 0.12);
   --shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
-  --radius: 16px;
-  --nav-h: 68px;
-  --font: "Poppins", system-ui, sans-serif;
-  --mono: "Fira Code", monospace;
-}
-
-/* Light mode (toggled by adding .light-theme on <html>) */
-html.light-theme {
-  --bg: #f6f9fc;
-  --bg-alt: #ffffff;
-  --surface: rgba(15, 23, 42, 0.04);
-  --surface-solid: #ffffff;
-  --border: rgba(15, 23, 42, 0.12);
-  --text: #0f172a;
-  --text-muted: #475569;
-  --accent: #0891b2;
-  --accent-2: #0284c7;
-  --accent-soft: rgba(8, 145, 178, 0.1);
-  --shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
+  --btn-on-accent: #04121c;
+  --hero-glow-1: rgba(34, 211, 238, 0.12);
+  --hero-glow-2: rgba(56, 189, 248, 0.1);
 }
 
 /* ---------- 2) BASE ---------- */
@@ -142,13 +149,13 @@ a {
 
 .btn--primary {
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: #04121c;
-  box-shadow: 0 8px 24px rgba(34, 211, 238, 0.25);
+  color: var(--btn-on-accent);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.28);
 }
 
 .btn--primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 30px rgba(34, 211, 238, 0.35);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.38);
 }
 
 .btn--ghost {
@@ -172,7 +179,7 @@ a {
 
 .btn--small:hover {
   background: var(--accent);
-  color: #04121c;
+  color: var(--btn-on-accent);
   border-color: var(--accent);
   transform: translateY(-2px);
 }
@@ -307,8 +314,8 @@ a {
   padding-top: var(--nav-h);
   overflow: hidden;
   background:
-    radial-gradient(60% 50% at 80% 20%, rgba(34, 211, 238, 0.12), transparent 70%),
-    radial-gradient(50% 40% at 15% 85%, rgba(56, 189, 248, 0.1), transparent 70%);
+    radial-gradient(60% 50% at 80% 20%, var(--hero-glow-1), transparent 70%),
+    radial-gradient(50% 40% at 15% 85%, var(--hero-glow-2), transparent 70%);
 }
 
 .hero__particles {
@@ -339,7 +346,7 @@ a {
   font-size: clamp(2.1rem, 6vw, 3.6rem);
   line-height: 1.15;
   font-weight: 700;
-  background: linear-gradient(120deg, var(--text) 40%, var(--accent));
+  background: linear-gradient(120deg, var(--text) 30%, var(--accent-2));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -403,10 +410,6 @@ a {
   -webkit-backdrop-filter: blur(12px);
 }
 
-html.light-theme .code-window {
-  background: rgba(255, 255, 255, 0.85);
-}
-
 .code-window__bar {
   display: flex;
   align-items: center;
@@ -430,7 +433,7 @@ html.light-theme .code-window {
   margin-left: auto;
   font-family: var(--mono);
   font-size: 0.75rem;
-  color: var(--text-muted);
+  color: #94a3b8;
 }
 
 .code-window__body {
@@ -438,7 +441,7 @@ html.light-theme .code-window {
   font-family: var(--mono);
   font-size: clamp(0.72rem, 1.6vw, 0.9rem);
   line-height: 1.75;
-  color: var(--text);
+  color: #e2e8f0;
   overflow-x: auto;
 }
 
@@ -471,10 +474,24 @@ html.light-theme .code-window {
   place-items: center;
   font-size: 3rem;
   font-weight: 700;
-  color: #04121c;
+  color: var(--btn-on-accent);
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   position: relative;
   box-shadow: 0 0 0 8px var(--accent-soft), var(--shadow);
+}
+
+/* Profile photo (assets/images/aryan.jpg) */
+.about__avatar-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 50%;
+}
+
+/* Fallback initials if the photo is missing */
+.about__initials {
+  display: none;
 }
 
 .about__avatar-circle::before {
@@ -823,7 +840,7 @@ a.contact__item:hover {
 }
 
 .social:hover {
-  color: #04121c;
+  color: var(--btn-on-accent);
   background: var(--accent);
   border-color: var(--accent);
   transform: translateY(-3px);
@@ -878,7 +895,7 @@ a.contact__item:hover {
 
 .back-to-top:hover {
   background: var(--accent);
-  color: #04121c;
+  color: var(--btn-on-accent);
 }
 
 /* ---------- 10) ANIMATIONS ---------- */
